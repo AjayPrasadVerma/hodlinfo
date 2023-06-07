@@ -29,7 +29,7 @@ app.get('', async (req, res) => {
         cache.set('top10Tickers', top10Tickers, 60);
 
         for (const tickerData of top10Tickers) {
-            const existingTicker = await Ticker.findOne({ name: tickerData.name });
+            const existingTicker = await Ticker.findOne({ name: tickerData.name }).maxTimeMS(20000);
 
             if (existingTicker) {
 

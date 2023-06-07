@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="./styles.css">
+    <title>Document</title>
+
+</head>
+
+<body>
+    <div id="root">
+        <div class="container-fluid">
+            <div id="container">
+                <div class="header">
+                    <div class="color-green" style="font-size: 2.5em;">HODLINFO</div>
+                </div>
+                <div class="header" style="margin-left: 7rem;">
+                    <div class="dropdown sub-header">
+                        <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown"
+                            aria-expanded="false">
+                            INR
+                        </button>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#">INR</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="dropdown sub-header">
+                        <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown"
+                            aria-expanded="false">
+                            INR
+                        </button>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#">INA</a></li>
+                            <li><a class="dropdown-item" href="#">INB</a></li>
+                            <li><a class="dropdown-item" href="#">INC</a></li>
+                            <li><a class="dropdown-item" href="#">IND</a></li>
+                        </ul>
+                    </div>
+
+                    <a class="btn buy sub-header" role="button" aria-disabled="true">Buy EATH</a>
+                </div>
+
+                <div class="header">
+                    <div class="_timer sub-header">
+                        <svg width="50" height="50">
+                            <circle id="circle" r="12" cx="25" cy="25" fill="transparent" stroke="#5dc7c2"></circle>
+                            <text id="timer" x="25" y="28"></text>
+                        </svg>
+                    </div>
+
+                    <div class="sub-header">
+                        <button type="button" class="btn btn-telegram ">
+                            <svg xmlns="http://www.w3.org/2000/svg" height="1.5em"
+                                viewBox="0 0 496 512"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. -->
+                                <style>
+                                    svg {
+                                        fill: #fff
+                                    }
+                                </style>
+                                <path
+                                    d="M248,8C111.033,8,0,119.033,0,256S111.033,504,248,504,496,392.967,496,256,384.967,8,248,8ZM362.952,176.66c-3.732,39.215-19.881,134.378-28.1,178.3-3.476,18.584-10.322,24.816-16.948,25.425-14.4,1.326-25.338-9.517-39.287-18.661-21.827-14.308-34.158-23.215-55.346-37.177-24.485-16.135-8.612-25,5.342-39.5,3.652-3.793,67.107-61.51,68.335-66.746.153-.655.3-3.1-1.154-4.384s-3.59-.849-5.135-.5q-3.283.746-104.608,69.142-14.845,10.194-26.894,9.934c-8.855-.191-25.888-5.006-38.551-9.123-15.531-5.048-27.875-7.717-26.8-16.291q.84-6.7,18.45-13.7,108.446-47.248,144.628-62.3c68.872-28.647,83.183-33.623,92.511-33.789,2.052-.034,6.639.474,9.61,2.885a10.452,10.452,0,0,1,3.53,6.716A43.765,43.765,0,0,1,362.952,176.66Z" />
+                            </svg>
+                            Connect Telegram</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="average-heaading">
+                <div>
+                    <div class="fs-1 color-green">0.95%</div>
+                    <div class="fs-3 color-gray">5 Mins</div>
+                </div>
+                <div>
+                    <div class="fs-1 color-green">0.93%</div>
+                    <div class="fs-3 color-gray">1 Hour</div>
+                </div>
+                <div>
+                    <div class="fs-1 color-gray">Best Price to Trade</div>
+                    <div class="fs-4 fw-4">₹ 24,79,307</div>
+                    <div class="color-gray fs-3">Average BTC/INR net price including commission</div>
+                </div>
+                <div>
+                    <div class="fs-1 color-green">3.75 %</div>
+                    <div class="fs-3 color-gray">1 Day</div>
+                </div>
+                <div>
+                    <div class="fs-1 color-green">10.04 %</div>
+                    <div class="fs-3 color-gray">7 Day</div>
+                </div>
+            </div>
+
+            <div class="content">
+                <table class="table table-borderless text-center">
+                    <thead>
+                        <tr>
+                            <th>#</th>
+                            <th>name</th>
+                            <th>last</th>
+                            <th>buy</th>
+                            <th>Sell</th>
+                            <th>volume</th>
+                            <th>base_unit</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <% top10.map((data, index)=>{ %>
+                            <tr>
+                                <td class="first">
+                                    <%= index+1 %>
+                                </td>
+                                <td>
+                                    <%= data.name %>
+                                </td>
+                                <td>
+                                    <%= data.last %>
+                                </td>
+                                <td>
+                                    <%= data.buy %>
+                                </td>
+                                <td>
+                                    <%= data.sell %>
+                                </td>
+                                <td>
+                                    <%= data.volume %>
+                                </td>
+                                <td class="last">
+                                    <%= data.base_unit %>
+                                </td>
+                            </tr>
+                            <% }) %>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <div class="footer">
+            <div style="display: flex; justify-content: space-between;">
+                <div style="display: flex; padding: 0px 5px;">
+                    <div style="margin-right: 14px;">Copyright © 2019</div>
+                    <div>HodlInfo.com</div>
+                </div>
+                <div>Support</div>
+            </div>
+        </div>
+        <div class="bottom-btn text-center bg-dark">
+            <button type="button" class="btn btn-outline color-green bg-dark">Add hodlinfo to home
+                screen</button>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
+        crossorigin="anonymous"></script>
+
+    <script src="./index.js"></script>
+</body>
+
+</html>
